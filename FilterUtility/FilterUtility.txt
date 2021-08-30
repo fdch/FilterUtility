@@ -1,0 +1,4 @@
+type effect;
+bus 1 1;
+code fUt1;
+description Infos.txt;

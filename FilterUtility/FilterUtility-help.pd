@@ -1,0 +1,45 @@
+#N canvas 525 69 466 478 12;
+#X declare -lib fd_lib;
+#X obj 4 4 cnv 15 450 30 empty empty FilterUtility 20 15 0 15 -228856
+-1 0;
+#X obj 312 7 declare -lib fd_lib;
+#X obj 46 261 noise~;
+#X obj 46 338 pd~ -ninsig 1 -noutsig 1;
+#X msg 146 296 pd~ stop;
+#X msg 145 261 pd~ start FilterUtility.pd;
+#X obj 211 384 env~;
+#X floatatom 211 408 5 0 0 0 - - -;
+#X msg 146 188 \; pd dsp 1;
+#X obj 342 404 *~;
+#X obj 342 428 dac~;
+#X obj 393 223 vsl 15 128 0 103 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1100 1;
+#X obj 393 359 dbtorms;
+#X msg 393 383 \$1 10;
+#X obj 393 407 line~;
+#X text 222 199 Turn On DSP first.;
+#X text 20 41 The Filter Utility brings together multiple filters into
+one place. These filters were made mostly by the Pure Data community.
+Check [pd meta] for more info. The Utility itself is mono and stacks
+up to 8 filters \, so that you can combine them at will. It is somewhat
+inspired in Ableton's EQ-Eight Audio Effect. It is best used as a subprocess
+\, like this:;
+#N canvas 0 22 450 300 TODO 0;
+#X text 34 33 Handle messages from parent \; more filters \; use as
+GOP abstraction \;;
+#X restore 42 416 pd TODO;
+#X msg 350 280 0;
+#X connect 2 0 3 0;
+#X connect 3 1 6 0;
+#X connect 3 1 9 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 7 0;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 9 1;
+#X connect 18 0 11 0;

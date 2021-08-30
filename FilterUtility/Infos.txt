@@ -1,0 +1,4 @@
+A Filter Utility with up to 8 stackable vanilla Pd filters. See README.md for instructions.
+
+Version: 0.1
+Author: ffddcchh
