@@ -1,10 +1,10 @@
-#N canvas 1165 62 694 339 12;
+#N canvas 531 407 694 371 12;
 #X declare -path lib;
-#X obj 641 47 tgl 15 0 \$0-graph \$0-graph-set empty 17 7 0 10 -262144
--1 -1 1 1;
+#X obj 641 47 tgl 15 0 \$0-graph \$0-graph-set empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X obj 283 235 hsl 264 17 0 127 0 1 \$0-ctf-slider \$0-ctf-slider-set
-empty -2 -8 0 10 -262144 -1 -1 7000 1;
-#X floatatom 571 209 0 0 0 2 - #0-rsn #0-rsn-set;
+empty -2 -8 0 10 #fcfcfc #000000 #000000 13100 1;
+#X floatatom 571 209 0 0 0 2 - \$0-rsn \$0-rsn-set 0;
 #X text 56 64 rlpf~;
 #X text 56 120 rhpf~;
 #X text 56 138 lpf~;
@@ -17,33 +17,35 @@ empty -2 -8 0 10 -262144 -1 -1 7000 1;
 #X text 133 101 lp2~;
 #X text 134 119 lp3~;
 #X text 134 153 lp5~;
-#X floatatom 553 235 0 0 0 2 - #0-ctf #0-ctf-set;
-#X floatatom 553 258 0 0 0 2 - #0-hpf #0-hpf-set;
+#X floatatom 553 235 0 0 0 2 - \$0-ctf \$0-ctf-set 0;
+#X floatatom 553 258 0 0 0 2 - \$0-hpf \$0-hpf-set 0;
 #X obj 283 258 hsl 264 17 0 127 0 1 \$0-hpf-slider \$0-hpf-slider-set
-empty -2 -8 0 10 -262144 -1 -1 0 1;
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 641 140 bng 15 250 50 0 \$0-clear \$0-clear-set empty 17 7 0
-10 -262144 -1 -1;
-#X floatatom 640 93 0 0 0 2 - #0-line-set #0-line;
+10 #fcfcfc #000000 #000000;
+#X floatatom 640 93 0 0 0 2 - \$0-line-set \$0-line 0;
 #X text 598 139 Clear;
-#X floatatom 640 116 0 0 1000 2 - #0-drive-nbx-set #0-drive-nbx;
+#X floatatom 640 116 0 0 1000 2 - \$0-drive-nbx-set \$0-drive-nbx 0
+;
 #X text 598 115 Drive;
 #X text 133 206 lp24~;
 #X text 134 226 lp12~;
 #X text 133 243 hp12~;
 #X text 133 262 bp12~;
-#X floatatom 640 70 3 0.5 100 0 - #0-graph-tlp-set #0-graph-tlp;
+#X floatatom 640 70 3 0.5 100 0 - \$0-graph-tlp-set \$0-graph-tlp 0
+;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-s 268 float 0;
 #X coords 0 100 267 0 267 140 2 0 0;
 #X restore 276 63 graph;
 #X obj 34 69 vradio 17 1 1 6 \$0-flt-sel-0 \$0-flt-sel-0-set empty
-0 -8 0 10 -233017 -1 -262144 4;
+0 -8 0 10 #e0e0e0 #e0e0e0 #fcfcfc 2;
 #X obj 113 67 vradio 17 1 1 6 \$0-flt-sel-1 \$0-flt-sel-1-set empty
-0 -8 0 10 -233017 -233017 -262144 1;
+0 -8 0 10 #e0e0e0 #e0e0e0 #fcfcfc 4;
 #X obj 112 174 vradio 17 1 1 6 \$0-flt-sel-2 \$0-flt-sel-2-set empty
-0 -8 0 10 -233017 -233017 -262144 3;
-#X obj 641 26 tgl 15 0 \$0-bypass \$0-bypass-set empty 17 7 0 10 -262144
--1 -1 0 1;
+0 -8 0 10 #e0e0e0 #e0e0e0 #fcfcfc 1;
+#X obj 641 26 tgl 15 0 \$0-bypass \$0-bypass-set empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X text 591 23 Bypass;
 #X text 544 66 -10;
 #X text 544 95 -30;
@@ -67,58 +69,58 @@ empty -2 -8 0 10 -262144 -1 -1 0 1;
 #X text 603 92 Time;
 #X text 598 45 Graph;
 #X obj 570 63 vsl 15 140 0 127 0 0 \$0-rsn-slider \$0-rsn-slider-set
-empty 0 -9 0 10 -262144 -1 -1 11500 1;
+empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 617 69 LP;
 #X text 133 171 shelf3~;
 #X text 133 187 butter3~;
-#X obj 641 161 tgl 15 0 \$0-norm \$0-norm-set empty 17 7 0 10 -262144
--1 -1 0 1;
+#X obj 641 161 tgl 15 0 \$0-norm \$0-norm-set empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X text 603 160 Norm;
-#X floatatom 639 229 3 0 120 0 dB #0-gain-set #0-gain;
+#X floatatom 639 229 3 0 120 0 dB \$0-gain-set \$0-gain 0;
 #X text 630 211 Gain;
-#X floatatom 638 260 3 0 120 0 dB #0-vol-set #0-vol;
+#X floatatom 638 260 3 0 120 0 dB \$0-vol-set \$0-vol 0;
 #X text 617 243 Volume;
 #X text 564 43 Res;
 #X text 239 257 Shelf;
 #X obj 34 175 vradio 17 1 1 6 \$0-flt-sel-3 \$0-flt-sel-3-set empty
-0 -8 0 10 -233017 -233017 -262144 3;
+0 -8 0 10 #e0e0e0 #e0e0e0 #fcfcfc 4;
 #X text 54 173 notch~;
 #X text 55 188 peak~;
 #X text 56 227 b.lp~;
 #X obj 539 27 hradio 15 1 0 3 \$0-input \$0-input-set empty 0 -8 0
-10 -262144 -1 -1 0;
+10 #fcfcfc #000000 #000000 0;
 #X text 55 244 b.hp~;
 #X obj 176 241 vradio 17 1 1 2 \$0-flt-sel-4 \$0-flt-sel-4-set empty
-0 -8 0 10 -233017 -233017 -262144 1;
+0 -8 0 10 #e0e0e0 #000000 #fcfcfc 0;
 #X text 196 257 lp~;
 #X text 493 25 Input;
 #X text 55 207 ap~;
 #X text 55 263 lsh~;
 #X text 196 239 hsh~;
-#N canvas 14 142 743 484 glue 0;
-#X obj 114 107 r \$0-hpf-slider;
-#X obj 21 16 r \$0-ctf-slider;
-#X obj 64 61 r \$0-rsn-slider;
-#X obj 162 151 r \$0-drive-nbx;
-#X obj 209 196 r \$0-norm;
-#X obj 257 241 r \$0-clear;
-#X obj 269 292 r \$0-flt;
-#X msg 257 265 clear bang;
-#X msg 209 220 norm \$1;
-#X msg 162 175 drive \$1;
-#X msg 114 131 shelf \$1;
-#X msg 64 85 resonance \$1;
-#X msg 21 40 cutoff \$1;
-#X obj 331 379 r \$0-filter-index;
-#X obj 328 406 pack f \$0;
-#X obj 54 395 list prepend 0 \$0;
+#N canvas 0 101 1280 677 glue 0;
+#X obj 109 141 r \$0-hpf-slider;
+#X obj 16 50 r \$0-ctf-slider;
+#X obj 59 95 r \$0-rsn-slider;
+#X obj 157 185 r \$0-drive-nbx;
+#X obj 204 230 r \$0-norm;
+#X obj 252 275 r \$0-clear;
+#X obj 264 326 r \$0-flt;
+#X msg 252 299 clear bang;
+#X msg 204 254 norm \$1;
+#X msg 157 209 drive \$1;
+#X msg 109 165 shelf \$1;
+#X msg 59 119 resonance \$1;
+#X msg 16 74 cutoff \$1;
+#X obj 326 413 r \$0-filter-index;
+#X obj 323 440 pack f \$0;
+#X obj 49 429 list prepend 0 \$0;
 #X obj 475 120 r \$0-filter-index;
 #X obj 477 149 pack f \$0;
 #X msg 477 173 \; \$2-index-\$1 bang;
-#X msg 54 419 \; \$2-index-\$1 \$3 \$4;
-#X msg 264 342 filter \$1;
-#X obj 269 316 route float;
-#N canvas 0 22 1266 577 filter-select 0;
+#X msg 49 453 \; \$2-index-\$1 \$3 \$4;
+#X msg 259 376 filter \$1;
+#X obj 264 350 route float;
+#N canvas 542 271 1266 577 filter-select 0;
 #X obj 463 148 s \$0-flt;
 #X msg 83 333 color 10 \$1 0;
 #X msg 123 280 10;
@@ -181,6 +183,7 @@ empty 0 -9 0 10 -262144 -1 -1 11500 1;
 #X obj 591 106 + 18;
 #X obj 718 100 + 24;
 #X obj 842 46 route set;
+#X floatatom 952 36 5 0 0 0 - - - 0;
 #X connect 1 0 36 0;
 #X connect 2 0 1 0;
 #X connect 3 0 37 0;
@@ -274,15 +277,61 @@ empty 0 -9 0 10 -262144 -1 -1 11500 1;
 #X restore 325 40 pd filter-select;
 #X obj 502 242 loadbang;
 #X obj 503 289 f \$0;
-#X obj 555 266 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 504 313 \; pd dsp 1 \; \$1-line-set 20 \; \$1-graph-tlp-set
-20 \; \$1-graph-set 0 \; \$1-gain-set 100 \; \$1-vol-set 100 \; \$1-bypass-set
-0 \; \$1-input-set 0 \;;
+#X obj 555 266 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 502 265 del 1;
 #X msg 475 60 63;
 #X obj 475 84 s \$0-global-ctf-slider-set;
 #X obj 475 33 r \$0-global-ctf-slider-mid;
+#X obj 1242 14 text define -k \$0-filters;
+#A set 30.4221 98.6763 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0 0 0 0 0 \; 0 0
+0 0 0 0 \; 0 0 0 0 0 0 \; 52 54 44 0 0 7 \; 0 0 0 0 0 0 \; 0 0 0 0
+0 0 \;;
+#X obj 918 94 r store;
+#X obj 930 124 list prepend write;
+#X obj 952 149 list trim;
+#X obj 845 73 r recall;
+#X obj 790 128 list prepend read;
+#X obj 808 290 s \$0-load;
+#X obj 856 167 t b a;
+#X obj 966 218 s \$0-ctf-slider-set;
+#X obj 1009 265 s \$0-rsn-slider-set;
+#X obj 1059 311 s \$0-hpf-slider-set;
+#X obj 1107 355 s \$0-drive-nbx-set;
+#X obj 1203 445 s \$0-clear-set;
+#X obj 1154 400 s \$0-norm-set;
+#X obj 1239 546 s \$0-filter-index-set;
+#X obj 964 192 r cutoff;
+#X obj 1007 242 r resonance;
+#X obj 1058 290 r shelf;
+#X obj 1107 334 r drive;
+#X obj 1152 378 r norm;
+#X obj 1201 423 r clear;
+#X obj 1313 374 r filter;
+#X obj 1239 523 r filter-index;
+#X obj 674 48 r cutoff-center;
+#X text 829 34 Messages from to pd~ object's inlet;
+#X text 1213 49 store params;
+#X obj 1326 440 s \$0-flt;
+#X msg 1318 404 \$1 \, set \$1;
+#X obj 687 78 r cutoff-global;
+#X obj 1242 125 r graph;
+#X obj 1242 149 s \$0-graph-set;
+#X obj 1243 180 r input;
+#X obj 1243 204 s \$0-input-set;
+#X obj 1244 230 r bypass;
+#X obj 1244 254 s \$0-bypass-set;
+#X obj 977 518 r gain;
+#X obj 977 542 s \$0-gain-set;
+#X obj 979 568 r volume;
+#X obj 979 591 s \$0-vol-set;
+#X obj 769 353 r onoff;
+#X obj 639 766 s \$2-index-\$1-set;
+#X obj 769 377 list prepend \$0;
+#X msg 769 401 \; \$1-index-\$3-set \$2;
+#X msg 504 313 \; pd dsp 1 \; \$1-line-set 20 \; \$1-graph-tlp-set
+20 \; \$1-graph-set 1 \; \$1-gain-set 100 \; \$1-vol-set 100 \; \$1-bypass-set
+0 \; \$1-input-set 0 \;;
 #X connect 0 0 10 0;
 #X connect 1 0 12 0;
 #X connect 2 0 11 0;
@@ -303,13 +352,38 @@ empty 0 -9 0 10 -262144 -1 -1 11500 1;
 #X connect 17 0 18 0;
 #X connect 20 0 15 0;
 #X connect 21 0 20 0;
-#X connect 23 0 27 0;
-#X connect 24 0 26 0;
+#X connect 23 0 26 0;
+#X connect 24 0 73 0;
 #X connect 25 0 24 0;
-#X connect 27 0 24 0;
-#X connect 28 0 29 0;
-#X connect 30 0 28 0;
-#X restore 97 288 pd glue;
+#X connect 26 0 24 0;
+#X connect 27 0 28 0;
+#X connect 29 0 27 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 30 0;
+#X connect 34 0 35 0;
+#X connect 35 0 37 0;
+#X connect 37 0 36 0;
+#X connect 37 1 33 0;
+#X connect 45 0 38 0;
+#X connect 46 0 39 0;
+#X connect 47 0 40 0;
+#X connect 48 0 41 0;
+#X connect 49 0 43 0;
+#X connect 50 0 42 0;
+#X connect 51 0 57 0;
+#X connect 52 0 44 0;
+#X connect 53 0 27 0;
+#X connect 57 0 56 0;
+#X connect 58 0 28 0;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 63 0 64 0;
+#X connect 65 0 66 0;
+#X connect 67 0 68 0;
+#X connect 69 0 71 0;
+#X connect 71 0 72 0;
+#X restore 99 307 pd glue;
 #N canvas 161 0 487 766 signals 0;
 #X obj 371 693 r \$0-graph;
 #X obj 323 669 r \$0-graph-tlp;
@@ -337,8 +411,8 @@ empty 0 -9 0 10 -262144 -1 -1 11500 1;
 #X text 87 465 hanning;
 #X msg 61 97 4096;
 #X obj 110 97 f 4096;
-#X obj 109 66 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 109 66 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000
+#000000;
 #X obj 109 43 loadbang;
 #X obj 81 366 / 4096;
 #X obj 61 493 tabwrite \$0-window;
@@ -368,12 +442,12 @@ empty 0 -9 0 10 -262144 -1 -1 11500 1;
 #N canvas 0 22 822 328 init_norm 0;
 #X obj 47 253 outlet;
 #X obj 47 206 - 100;
-#X floatatom 47 229 9 0 0 0 - - -;
+#X floatatom 47 229 9 0 0 0 - - - 0;
 #X text 119 186 leistung - techn. dB;
 #X msg 47 76 4096;
 #X obj 88 75 f 4096;
-#X obj 88 52 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 88 52 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000
+#000000;
 #X obj 88 29 loadbang;
 #X obj 47 184 rmstodb;
 #X obj 47 121 / 4;
@@ -401,7 +475,7 @@ energie;
 #X obj 345 552 -;
 #X obj 345 504 clip 0 1;
 #X obj 345 481 / 100;
-#X floatatom 345 454 5 0.5 100 0 - - -;
+#X floatatom 345 454 5 0.5 100 0 - - - 0;
 #X obj 366 403 loadbang;
 #X obj 110 305 fft~;
 #X obj 509 613 line 0 0.1;
@@ -415,11 +489,11 @@ energie;
 #X msg 722 696 6;
 #X obj 722 718 / 2;
 #X obj 722 740 mtof;
-#X floatatom 722 762 9 0 0 0 - - -;
+#X floatatom 722 762 9 0 0 0 - - - 0;
 #X text 795 764 Hz;
 #X obj 829 719 / 2;
 #X obj 829 740 mtof;
-#X floatatom 829 762 9 0 0 0 - - -;
+#X floatatom 829 762 9 0 0 0 - - - 0;
 #X text 904 762 Hz;
 #X msg 829 697 273;
 #X obj 722 673 t b b;
@@ -447,8 +521,8 @@ energie;
 #X text 770 89 ON/OFF;
 #X text 470 95 (0 .. 100);
 #X text 449 79 temporal lowpass;
-#X obj 586 268 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 586 268 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000
+#000000;
 #X obj 509 809 tabwrite \$0-s;
 #X msg 515 326 \; \$1-s xticks 0 12 2;
 #X msg 540 363 \; \$1-s yticks 0 5 2;
@@ -570,6 +644,13 @@ energie;
 #X obj 269 73 == 2;
 #X obj 156 204 clip~ -1 1;
 #X obj 59 731 dac~ 1;
+#X obj 10 17 inlet~;
+#X obj 148 595 r \$0-output;
+#X obj 176 625 == 1;
+#X obj 148 706 *~;
+#X obj 148 730 outlet~;
+#X obj 59 709 *~ 1;
+#X obj 138 626 ==;
 #X connect 0 0 2 2;
 #X connect 1 0 2 1;
 #X connect 3 0 21 0;
@@ -582,7 +663,8 @@ energie;
 #X connect 10 0 13 0;
 #X connect 11 0 9 0;
 #X connect 12 0 11 0;
-#X connect 13 0 46 0;
+#X connect 13 0 52 0;
+#X connect 13 0 50 0;
 #X connect 14 0 2 0;
 #X connect 14 0 13 1;
 #X connect 15 0 39 0;
@@ -617,8 +699,15 @@ energie;
 #X connect 44 0 42 0;
 #X connect 45 0 7 1;
 #X connect 45 0 15 0;
-#X restore 19 288 pd signals;
-#N canvas 0 22 1034 612 meta 0;
+#X connect 47 0 24 0;
+#X connect 48 0 49 0;
+#X connect 48 0 53 0;
+#X connect 49 0 50 1;
+#X connect 50 0 51 0;
+#X connect 52 0 46 0;
+#X connect 53 0 52 1;
+#X restore 18 308 pd signals;
+#N canvas 47 51 1034 612 meta 0;
 #X text 19 22 Filters taken from mkmr \, nusmuk-audio \, miller puckette
 \, pink~ and spectrum~ from Thomas Musil;
 #X text 30 267 http://musicdsp.org/files/Audio-EQ-Cookbook.txt;
@@ -656,33 +745,36 @@ high input amplitude);
 ;
 #X restore 614 309 pd meta;
 #X obj 357 26 hradio 15 1 0 8 \$0-filter-index \$0-filter-index-set
-empty 0 -8 0 10 -204800 -1 -1 0;
+empty 0 -8 0 10 #c4fcfc #000000 #000000 0;
 #X text 309 23 Index;
 #X obj 357 41 tgl 15 0 \$0-index-0 \$0-index-0-set empty 17 7 0 10
--262144 -1 -1 1 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 372 41 tgl 15 0 \$0-index-1 \$0-index-1-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 387 41 tgl 15 0 \$0-index-2 \$0-index-2-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 402 41 tgl 15 0 \$0-index-3 \$0-index-3-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 417 41 tgl 15 0 \$0-index-4 \$0-index-4-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 432 41 tgl 15 0 \$0-index-5 \$0-index-5-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 447 41 tgl 15 0 \$0-index-6 \$0-index-6-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X obj 462 41 tgl 15 0 \$0-index-7 \$0-index-7-set empty 17 7 0 10
--262144 -1 -1 0 1;
+#fcfcfc #000000 #000000 0 1;
 #X text 308 40 On/Off;
-#X obj 364 286 text define -k \$0-filters;
-#A set 75.3308 0 0 0 0 25 \; 0 0 0 0 0 0 \; 75.3308 94.1079 0 0 0 15
-\; 0 0 0 0 0 0 \; 18.3498 0 0 0 0 20 \; 0 0 0 0 0 2 \; 0 0 0 0 0 0
-\; 0 0 0 0 0 0 \;;
 #X text 152 39 fdch.github.io;
 #X text 132 25 ~ Filter Utility ~;
 #X obj 178 83 hsl 80 15 0 127 0 0 \$0-global-ctf-slider \$0-global-ctf-slider-set
-empty -2 -8 0 10 -262144 -1 -1 3919 1;
+empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 209 68 bng 15 250 50 0 \$0-global-ctf-slider-mid \$0-global-ctf-slider-mid-set
-empty 17 7 0 10 -262144 -1 -1;
+empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 18 285 inlet~;
+#X obj 627 187 hradio 15 1 0 2 \$0-output \$0-output-set empty 0 -8
+0 10 #fcfcfc #000000 #000000 0;
+#X text 599 185 Out;
+#X obj 18 332 outlet~;
+#X connect 80 0 100 0;
+#X connect 97 0 80 0;
 #X coords 0 -1 1 1 650 260 1 20 20;

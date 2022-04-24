@@ -1,0 +1,186 @@
+#N canvas 893 309 483 502 12;
+#X declare -lib fd_lib;
+#N canvas 369 27 1247 970 messages 0;
+#X msg 244 443 resonance \$1;
+#X floatatom 247 408 5 0 0 0 - - -;
+#X floatatom 144 283 5 0 0 0 - - -;
+#X floatatom 77 341 5 0 0 0 - - -;
+#X msg 175 356 cutoff \$1;
+#X floatatom 95 480 5 0 0 0 - - -;
+#X msg 289 499 shelf \$1;
+#X obj 419 741 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 449 700 norm \$1;
+#X floatatom 93 584 5 0 0 0 - - -;
+#X msg 342 565 drive \$1;
+#X floatatom 22 124 5 0 7 0 - - -;
+#X msg 21 162 filter-index \$1;
+#X msg 142 314 filter \$1;
+#X msg 489 750 clear bang;
+#X msg 408 648 cutoff-center bang;
+#X floatatom 152 674 5 0 0 0 - - -;
+#X msg 382 616 cutoff-global \$1;
+#X floatatom 750 294 5 0 0 0 - - -;
+#X msg 747 316 input \$1;
+#X obj 757 394 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 754 413 bypass \$1;
+#X obj 762 522 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 761 544 graph \$1;
+#X floatatom 691 833 5 0 0 0 - - -;
+#X msg 691 856 gain \$1;
+#X floatatom 965 833 5 0 0 0 - - -;
+#X msg 965 856 volume \$1;
+#X obj 100 219 pack f f;
+#X floatatom 125 199 5 0 0 0 - - -;
+#X obj 105 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 84 243 onoff \$1 \$2;
+#X msg 573 35 start;
+#X msg 770 666 start-nogui;
+#X msg 594 84 stop;
+#X msg 697 160 recall myprefs.txt;
+#X msg 686 128 store myprefs.txt;
+#X text 565 11 START / STOP the Filter Utility;
+#X text 752 376 Bypass filtering ON/OFF (default 0);
+#X text 816 286 0: inlet~ (default) \; 1: noise~ \; 2: pink noise \;
+;
+#X text 765 640 You can start without gui like this:;
+#X text 769 688 This is useful once you've set up your parameters and
+you dont need the GUI anymore;
+#X text 756 488 Analyze and plot the signal's spectrum graph. Disabled
+by default. This would be useful only with gui.;
+#X text 15 72 Filter Parameters ---------------------------------------
+;
+#X text 64 113 Filter index (0..7). There are 8 stacked filters in
+total. Here you can select one filter and edit its parameters.;
+#X text 179 193 This bypasses the filter (turns it 'off') or not ('on').
+The Message is maade of 1/0 followed by a filter index (0..7), f 39
+;
+#X text 195 274 Filter:;
+#X text 179 173 Onoff:;
+#X text 64 95 Filter Index:;
+#X text 195 294 Choose between 22 filters. See [About filters];
+#X text 18 344 Cutoff:;
+#X text 17 368 Specify the filter's cutoff frequency in MIDI, f 17
+;
+#X text 247 388 Resonance:;
+#X text 285 404 Specify the filter's resonant frequency (if any) in
+MIDI, f 30;
+#X text 32 506 Specify the filter's shelving frequency (if any) in
+MIDI, f 20;
+#X text 31 485 Shelf:;
+#X text 28 583 Drive:;
+#X text 30 605 Specify the filter's overdrive amount (if any) in dB
+, f 31;
+#X obj 204 780 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 33 674 Global Cutoff:;
+#X text 40 700 This offsets the entire cutoff+resonance+shelf set of
+parameters. It takes MIDI \, with the center being at 63, f 29;
+#X text 33 778 Global Cutoff-Center:;
+#X text 39 803 Bang resets the global cutoff to mid point (63);
+#X text 312 736 Normalization:;
+#X text 293 849 Clears the filters;
+#X obj 385 881 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 755 469 Graph:;
+#X text 752 358 Bypass:;
+#X text 740 248 Input:;
+#X text 743 266 Input Type;
+#X text 671 73 STORE / RECALL PARAMETERS --------------------------------
+;
+#X text 678 93 Parameters store/recall: these will be stored in text
+files in the abstraction's parent path. Specify a filename.;
+#X text 766 614 START WITHOUT GUI ---------------------------------
+;
+#X text 690 809 Set up GAIN (before filters);
+#X text 965 808 VOLUME (after filtering);
+#X text 739 834 (default 100);
+#X text 1014 829 (default 100);
+#X obj 573 875 s \$0-messages;
+#X connect 0 0 77 0;
+#X connect 1 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 4 0;
+#X connect 4 0 77 0;
+#X connect 5 0 6 0;
+#X connect 6 0 77 0;
+#X connect 7 0 8 0;
+#X connect 8 0 77 0;
+#X connect 9 0 10 0;
+#X connect 10 0 77 0;
+#X connect 11 0 12 0;
+#X connect 12 0 77 0;
+#X connect 13 0 77 0;
+#X connect 14 0 77 0;
+#X connect 15 0 77 0;
+#X connect 16 0 17 0;
+#X connect 17 0 77 0;
+#X connect 18 0 19 0;
+#X connect 19 0 77 0;
+#X connect 20 0 21 0;
+#X connect 21 0 77 0;
+#X connect 22 0 23 0;
+#X connect 23 0 77 0;
+#X connect 24 0 25 0;
+#X connect 25 0 77 0;
+#X connect 26 0 27 0;
+#X connect 27 0 77 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 1;
+#X connect 30 0 28 0;
+#X connect 31 0 77 0;
+#X connect 32 0 77 0;
+#X connect 33 0 77 0;
+#X connect 34 0 77 0;
+#X connect 35 0 77 0;
+#X connect 36 0 77 0;
+#X connect 58 0 15 0;
+#X connect 65 0 14 0;
+#X restore 304 156 pd messages;
+#X obj 4 4 cnv 15 450 30 empty empty FU-abstraction 20 15 0 15 -228856
+-1 0;
+#X obj 312 7 declare -lib fd_lib;
+#X msg 41 147 \; pd dsp 1;
+#X obj 273 415 *~;
+#X obj 273 439 dac~;
+#X obj 396 213 vsl 15 128 0 103 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11700 1;
+#X obj 396 349 dbtorms;
+#X msg 396 373 \$1 10;
+#X obj 396 397 line~;
+#X text 117 158 Turn On DSP first.;
+#X text 20 41 The Filter Utility brings together multiple filters into
+one place. These filters were made mostly by the Pure Data community.
+Check [pd meta] for more info. The Utility itself is mono and stacks
+up to 8 filters \, so that you can combine them at will. It is somewhat
+inspired in Ableton's EQ-Eight Audio Effect. It is best used as a subprocess
+\, like this:;
+#X obj 72 307 FU-abstraction;
+#X obj 68 208 noise~;
+#X obj 65 428 env~;
+#X floatatom 65 452 5 0 0 0 - - -;
+#X msg 178 224 stop;
+#X msg 169 195 start;
+#X msg 243 246 start-nogui \, recall myprefs.txt, f 19;
+#X msg 235 219 store myprefs.txt;
+#X msg 228 194 recall myprefs.txt;
+#X obj 259 282 r \$0-messages;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 1;
+#X connect 12 0 14 0;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 16 0 12 1;
+#X connect 17 0 12 1;
+#X connect 18 0 12 1;
+#X connect 19 0 12 1;
+#X connect 20 0 12 1;
+#X connect 21 0 12 1;
